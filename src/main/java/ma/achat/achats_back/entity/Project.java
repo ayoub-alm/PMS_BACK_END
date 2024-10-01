@@ -11,15 +11,15 @@ import ma.achat.achats_back.entity.data.BaseEntity;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
-@Table(name = "walle_spaces")
-public class WalletSpace extends BaseEntity {
+@Table(name = "projects")
+public class Project extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
+    @Column(nullable = false)
     private String name;
-    private Float balance;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "company_id")
+    @JoinColumn(name = "company_id", nullable = false)
     private Company company;
 }

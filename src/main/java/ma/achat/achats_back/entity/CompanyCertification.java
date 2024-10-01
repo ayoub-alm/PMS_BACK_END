@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
+@Table(name = "company_certifications")
 public class CompanyCertification extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

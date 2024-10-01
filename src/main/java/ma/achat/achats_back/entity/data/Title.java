@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
+@Table(name = "titles")
 public class Title extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

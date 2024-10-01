@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
+@Table(name = "project_types")
 public class ProjectType extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

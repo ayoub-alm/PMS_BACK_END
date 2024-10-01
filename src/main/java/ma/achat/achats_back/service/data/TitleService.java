@@ -55,14 +55,14 @@ public class TitleService {
      * @return the updated title.
      * @throws EntityNotFoundException if no title with the specified ID exists.
      */
-    public Title updateTitle(Long id, Title title) {
-        return this.titleRepository.findById(id)
-                .map(existingTitle -> {
-                    existingTitle.setTitle(title.getTitle());
-                    return this.titleRepository.save(existingTitle);
-                })
-                .orElseThrow(() -> new EntityNotFoundException("Title with id " + id + " not found."));
-    }
+//    public Title updateTitle(Long id, Title personTitle) {
+//        return this.titleRepository.findById(id)
+//                .map(existingTitle -> {
+//                    existingTitle.setTitle( personTitle.getTitle());
+//                    return this.titleRepository.save(existingTitle);
+//                })
+//                .orElseThrow(() -> new EntityNotFoundException("Title with id " + id + " not found."));
+//    }
 
     /**
      * Deletes a title by its ID.

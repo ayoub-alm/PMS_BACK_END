@@ -7,12 +7,14 @@ import ma.achat.achats_back.entity.data.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
+@Table(name = "companies")
 public class Company extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -104,5 +106,16 @@ public class Company extends BaseEntity {
     @JsonIgnore
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<CompanyDoc> companyDocs;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Project> projects;
+
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "companies") // This matches the mappedBy in User
+    private Set<User> employees; // Change to Set or List as needed
+
+
 
 }
