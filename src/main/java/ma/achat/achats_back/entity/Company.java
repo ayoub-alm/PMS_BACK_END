@@ -111,11 +111,8 @@ public class Company extends BaseEntity {
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Project> projects;
 
-
     @JsonIgnore
-    @ManyToMany(mappedBy = "companies") // This matches the mappedBy in User
-    private Set<User> employees; // Change to Set or List as needed
-
-
+    @ManyToMany(mappedBy = "companies")
+    private Set<User> employees;
 
 }
